@@ -3,6 +3,7 @@ import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 
 /**
    A BlockStack that can be positioned anywhere on the screen.
@@ -11,10 +12,17 @@ public class BlockStack extends Train
 {
 	private int xLeft;
 	private int yTop;
-	private Rectangle body;
-	private Ellipse2D.Double frontTire, rearTire;
-	private Point2D.Double r1,r2,r3,r4;
-	private Line2D.Double frontWindshield,roofTop,rearWindshield;
+	private Rectangle2D.Double boxA, boxB, boxC, boxD, boxE, bottomBlock;
+    public static final int UNIT = 10 ;
+    public static final int U6 = 6 * UNIT ;
+    public static final int U5 = 5 * UNIT ;
+    public static final int U4 = 4 * UNIT ;
+    public static final int U3 = 3 * UNIT ;
+    public static final int U2 = 2 * UNIT ;
+    public static final int U15 = UNIT + UNIT / 2 ;
+    public static final int U05 =  UNIT / 2 ;
+    public static final int BODY_WIDTH = U3 ;
+    public static final int BODY_HEIGHT = U2 ;
 
 	/**
       Constructs a BlockStack with a given Bottom left corner.
@@ -35,41 +43,20 @@ public class BlockStack extends Train
 	{
 		 xLeft = getRect().x;
 		 yTop = getRect().y;
-		 body 
-		= new Rectangle(xLeft, yTop + 10, 60, 10);      
-		 frontTire 
-		= new Ellipse2D.Double(xLeft + 10, yTop + 20, 10, 10);
-		 rearTire
-		= new Ellipse2D.Double(xLeft + 40, yTop + 20, 10, 10);
+		 bottomBlock = new Rectangle2D.Double(xLeft, yTop + UNIT, UNIT, UNIT);     
+		 boxA = new Rectangle2D.Double(xLeft, yTop + U2, UNIT, UNIT);
+		 boxB = new Rectangle2D.Double(xLeft, yTop + U3, UNIT, UNIT);
+		 boxC = new Rectangle2D.Double(xLeft, yTop + U4, UNIT, UNIT);
+		 boxD = new Rectangle2D.Double(xLeft, yTop + U5, UNIT, UNIT);
+		 boxE = new Rectangle2D.Double(xLeft, yTop + U6, UNIT, UNIT);
 
-		 r1 
-		= new Point2D.Double(xLeft + 10, yTop + 10);
+		g2.draw(boxA);
+		g2.draw(boxB);
+		g2.draw(boxC);
+		g2.draw(boxD);
+		g2.draw(boxE);
+
 		
-		 r2 
-		= new Point2D.Double(xLeft + 20, yTop);
-		
-		 r3 
-		= new Point2D.Double(xLeft + 40, yTop);
-		 
-		 r4 
-		= new Point2D.Double(xLeft + 50, yTop + 10);
-
-		 frontWindshield 
-		= new Line2D.Double(r1, r2);
-		 
-		 roofTop 
-		= new Line2D.Double(r2, r3);
-		
-		 rearWindshield
-		= new Line2D.Double(r3, r4);
-
-		g2.draw(body);
-		g2.draw(frontTire);
-		g2.draw(rearTire);
-		g2.draw(frontWindshield);      
-		g2.draw(roofTop);      
-		g2.draw(rearWindshield);
-
 		if(hasNext())
 		{
 			g2.drawLine(getRect().x, getRect().y, getNext().getRect().x, getNext().getRect().y);			
@@ -106,7 +93,7 @@ public class BlockStack extends Train
 
 	/**
 	 * Make selected BlockStack next
-	 * @param the next Vehicle
+	 * @param the next BlockStack
 	 */
 	public void setNext(Train next)
 	{
