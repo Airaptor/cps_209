@@ -26,7 +26,6 @@ public class Cart extends Train
     public static final int U05 =  UNIT / 2 ;
     public static final int BODY_WIDTH = U3 ;
     public static final int BODY_HEIGHT = U2 ;
-
 	/**
       Constructs a Cart with a given top left corner.
       @param x the x coordinate of the top left corner
@@ -44,16 +43,18 @@ public class Cart extends Train
 	 */
 	public void draw(Graphics2D g2)
 	{
+		 
 		 xLeft = getRect().x;
 		 yTop = getRect().y;
-		 body = new Rectangle2D.Double(xLeft, yTop + UNIT, U6, UNIT);     
+		 body = new Rectangle2D.Double(xLeft, yTop + UNIT, U6, UNIT);
+		 g2.drawString(String.valueOf(Train.count), xLeft + UNIT*2,yTop + UNIT + UNIT);
 		 frontTire = new Ellipse2D.Double(xLeft + UNIT, yTop + U2, UNIT, UNIT);
 		 rearTire = new Ellipse2D.Double(xLeft + U4, yTop + U2, UNIT, UNIT);
+		 
 		// the right end of the hitch
 		r5 = new Point2D.Double(xLeft + U6, yTop + U15);
 		// the left end of the hitch
 		r6  = new Point2D.Double(xLeft + U6 + U05, yTop + U15);
-			
 		hitch = new Line2D.Double(r5, r6);
 
 		g2.draw(body);
@@ -65,6 +66,7 @@ public class Cart extends Train
 		
 		if(hasNext())
 		{
+			
 			g2.drawLine(getRect().x, getRect().y, getNext().getRect().x, getNext().getRect().y);			
 			getNext().draw(g2);
 		}
@@ -75,6 +77,7 @@ public class Cart extends Train
 	 */
 	public Rectangle getRect() 
 	{
+		
 		return new Rectangle(x, y, TRAIN_WIDTH, TRAIN_HEIGHT);
 	}
 
@@ -83,6 +86,7 @@ public class Cart extends Train
 	 */
 	public boolean hasNext()
 	{
+		
 		return (next != null);
 	}
 
@@ -132,6 +136,7 @@ public class Cart extends Train
 	public void setPrevious(Train previous) 
 	{
 		this.previous = previous;
+		
 	}
 
 	/**
