@@ -13,7 +13,7 @@ public class BlockStack extends Train
 	private int xLeft;
 	private int yTop;
 	private Rectangle2D.Double boxA, boxB, boxC, boxD, boxE, bottomBlock;
-    public static final int UNIT = 10 ;
+    public static final int UNIT = 30 ;
     public static final int U6 = 6 * UNIT ;
     public static final int U5 = 5 * UNIT ;
     public static final int U4 = 4 * UNIT ;
@@ -43,13 +43,14 @@ public class BlockStack extends Train
 	{
 		 xLeft = getRect().x;
 		 yTop = getRect().y;
-		 bottomBlock = new Rectangle2D.Double(xLeft, yTop + UNIT, UNIT, UNIT);     
-		 boxA = new Rectangle2D.Double(xLeft, yTop + U2, UNIT, UNIT);
-		 boxB = new Rectangle2D.Double(xLeft, yTop + U3, UNIT, UNIT);
-		 boxC = new Rectangle2D.Double(xLeft, yTop + U4, UNIT, UNIT);
-		 boxD = new Rectangle2D.Double(xLeft, yTop + U5, UNIT, UNIT);
-		 boxE = new Rectangle2D.Double(xLeft, yTop + U6, UNIT, UNIT);
-
+		 bottomBlock = new Rectangle2D.Double(xLeft, yTop + UNIT, UNIT, UNIT/2);     
+		 boxA = new Rectangle2D.Double(xLeft, yTop - U2 - UNIT , UNIT, UNIT);
+		 boxB = new Rectangle2D.Double(xLeft, yTop - U3 - UNIT, UNIT, UNIT);
+		 boxC = new Rectangle2D.Double(xLeft, yTop - U4 - UNIT, UNIT, UNIT);
+		 boxD = new Rectangle2D.Double(xLeft, yTop - U5 - UNIT, UNIT, UNIT);
+		 boxE = new Rectangle2D.Double(xLeft, yTop - U6 - UNIT, UNIT, UNIT);
+		 
+		g2.fill(bottomBlock);
 		g2.draw(boxA);
 		g2.draw(boxB);
 		g2.draw(boxC);
@@ -139,10 +140,5 @@ public class BlockStack extends Train
 		this.y = y ;
 	}
 
-	@Override
-	public void setNext(Train next) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }//End BlockStack Class
