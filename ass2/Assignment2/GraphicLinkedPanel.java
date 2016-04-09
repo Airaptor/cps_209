@@ -99,7 +99,7 @@ public class GraphicLinkedPanel extends JPanel implements MouseMotionListener
 		{
 			objects.add(new Cart(event.getX(), event.getY(), null));
 		}
-		else if(objects.size() == 7)
+		else if(objects.size() < 7)
 		{
 			objects.add(new BlockStack(event.getX(), event.getY(), null));
 		}
@@ -132,34 +132,6 @@ public class GraphicLinkedPanel extends JPanel implements MouseMotionListener
 	{
 		if(doneAdding() && selectedObject!= null)
 			selectedObject.moveTo(event.getX(), event.getY());
-	}
-
-	/**
-	 * Move FrontTrain in x direction
-	 * @param x
-	 */
-	public void moveXDir(int x)
-	{
-		objects.get(0).moveX(x);
-	}
-
-	/**
-	 * Move FrontTrain in y direction
-	 * @param y
-	 */
-	public void moveYDir(int y)
-	{
-		objects.get(0).moveY(y);
-	}
-
-	/**
-	 * Move FrontTrain in random direction
-	 * @param x
-	 * @param y
-	 */
-	public void moveRand(int x, int y)
-	{
-		objects.get(0).moveRandXY(x,y);
 	}
 
 	/**
