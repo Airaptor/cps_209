@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.geom.Ellipse2D;
@@ -14,6 +15,7 @@ public class BlockStack extends Train
 	private int yTop;
 	private Rectangle2D.Double boxA, boxB, boxC, boxD, boxE, bottomBlock;
     public static final int UNIT = 30 ;
+    public static final int U8 = 8 * UNIT ;
     public static final int U6 = 6 * UNIT ;
     public static final int U5 = 5 * UNIT ;
     public static final int U4 = 4 * UNIT ;
@@ -43,14 +45,15 @@ public class BlockStack extends Train
 	{
 		 xLeft = getRect().x;
 		 yTop = getRect().y;
-		 bottomBlock = new Rectangle2D.Double(xLeft, yTop + UNIT, UNIT, UNIT/2);     
-		 boxA = new Rectangle2D.Double(xLeft, yTop - U2 - UNIT , UNIT, UNIT);
-		 boxB = new Rectangle2D.Double(xLeft, yTop - U3 - UNIT, UNIT, UNIT);
+		 bottomBlock = new Rectangle2D.Double(xLeft, yTop, UNIT, UNIT/2);     
+		 boxA = new Rectangle2D.Double(xLeft, yTop - U05 - UNIT , UNIT, UNIT);
+		 boxB = new Rectangle2D.Double(xLeft, yTop - U2 - UNIT, UNIT, UNIT);
 		 boxC = new Rectangle2D.Double(xLeft, yTop - U4 - UNIT, UNIT, UNIT);
-		 boxD = new Rectangle2D.Double(xLeft, yTop - U5 - UNIT, UNIT, UNIT);
-		 boxE = new Rectangle2D.Double(xLeft, yTop - U6 - UNIT, UNIT, UNIT);
+		 boxD = new Rectangle2D.Double(xLeft, yTop - U6 - UNIT, UNIT, UNIT);
+		 boxE = new Rectangle2D.Double(xLeft, yTop - U8 - UNIT, UNIT, UNIT);
 		 
 		g2.fill(bottomBlock);
+		g2.setColor(Color.green) ;
 		g2.draw(boxA);
 		g2.draw(boxB);
 		g2.draw(boxC);
