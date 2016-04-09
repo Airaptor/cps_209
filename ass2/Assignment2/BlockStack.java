@@ -43,14 +43,20 @@ public class BlockStack extends Train
 	 */
 	public void draw(Graphics2D g2)
 	{
-		 xLeft = getRect().x;
-		 yTop = getRect().y;
-		 bottomBlock = new Rectangle2D.Double(xLeft, yTop, UNIT, UNIT/2);     
-		 boxA = new Rectangle2D.Double(xLeft, yTop - U05 - UNIT , UNIT, UNIT);
-		 boxB = new Rectangle2D.Double(xLeft, yTop - U2 - UNIT, UNIT, UNIT);
-		 boxC = new Rectangle2D.Double(xLeft, yTop - U4 - UNIT, UNIT, UNIT);
-		 boxD = new Rectangle2D.Double(xLeft, yTop - U6 - UNIT, UNIT, UNIT);
-		 boxE = new Rectangle2D.Double(xLeft, yTop - U8 - UNIT, UNIT, UNIT);
+		xLeft = getRect().x;
+		yTop = getRect().y;
+		bottomBlock = new Rectangle2D.Double(xLeft, yTop, UNIT, UNIT/2);     
+		boxA = new Rectangle2D.Double(xLeft, yTop - U05 - UNIT , UNIT, UNIT);
+		boxB = new Rectangle2D.Double(xLeft, yTop - U2 - UNIT, UNIT, UNIT);
+		boxC = new Rectangle2D.Double(xLeft, yTop - U4 - UNIT, UNIT, UNIT);
+		boxD = new Rectangle2D.Double(xLeft, yTop - U6 - UNIT, UNIT, UNIT);
+		boxE = new Rectangle2D.Double(xLeft, yTop - U8 - UNIT, UNIT, UNIT);
+		g2.drawString("A", xLeft + UNIT/2, yTop - U05 - UNIT + UNIT/2);
+		g2.drawString("B", xLeft + UNIT/2, yTop - U2 - UNIT + UNIT/2);
+		g2.drawString("C", xLeft + UNIT/2, yTop - U4 - UNIT + UNIT/2);
+		g2.drawString("D", xLeft + UNIT/2, yTop - U6 - UNIT + UNIT/2);
+		g2.drawString("E", xLeft + UNIT/2, yTop - U8 - UNIT + UNIT/2);
+				 
 		 
 		g2.fill(bottomBlock);
 		g2.setColor(Color.green) ;
