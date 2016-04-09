@@ -103,8 +103,10 @@ public class GraphicLinkedViewer extends JFrame
 		{
 			public void actionPerformed(ActionEvent event)
 			{
-				facename = name;
-				System.out.println("Add first");
+				// Description of what it should do :(
+				facename = name;			
+				JOptionPane.showMessageDialog(null, "Add cart that is pressed to FrontTrains location + FrontTrains width. ");
+				System.out.println("Add first. \n If previous then add the prev cart to location + firstCart width");
 				/*
 				 * Complete with function for add first	
 				 * panel.moveXDir(80); (moves x by 80)
@@ -129,12 +131,11 @@ public class GraphicLinkedViewer extends JFrame
 		{
 			public void actionPerformed(ActionEvent event)
 			{
+				// Description of what it should do :(
 				facename = name;
-				System.out.println("Add last");
-				/*
-				 * Complete with function for add last
-				 * panel.moveXDir(80); (moves x by 80)
-				*/
+				JOptionPane.showMessageDialog(null, "Add cart that is pressed to FrontTrains location + width + previous cart.\nAdd Last. \n If no previous then add the prev cart to location + FrontTrains ");
+				System.out.println("Add Last. \n If no previous then add the prev cart to location + FrontTrains ");
+
 			}
 		}      
 
@@ -155,12 +156,11 @@ public class GraphicLinkedViewer extends JFrame
 		{
 			public void actionPerformed(ActionEvent event)
 			{
+				// Description of what it should do :(
 				facename = name;
-				System.out.println("remove First");
-				/*
-				 * Complete with function for remove first 
-				 * panel.moveXDir(80); (moves x by 80)
-				*/
+				JOptionPane.showMessageDialog(null, "Remove the cart that is the first in FrontTrains location \n remove First.");
+				System.out.println("remove First.");
+
 			}
 		}      
 
@@ -181,12 +181,11 @@ public class GraphicLinkedViewer extends JFrame
 		{
 			public void actionPerformed(ActionEvent event)
 			{
+				// Description of what it should do :(
 				facename = name;
-				System.out.println("removed last");
-				/*
-				 * Complete with function for remove last
-				 * panel.moveXDir(80); (moves x by 80)
-				*/
+				JOptionPane.showMessageDialog(null, "Remove the cart that is the last in FrontTrains list \n remove last.");
+				System.out.println("remove Last.");
+
 			}
 		}      
 
@@ -220,12 +219,10 @@ public class GraphicLinkedViewer extends JFrame
 		{
 			public void actionPerformed(ActionEvent event)
 			{
+				// Description of what it should do :(
 				System.out.println("queue remove");
-				/*
-				 * Complete with function for queue remove
-				 * 				 
-				 * panel.moveXDir(80); (moves x by 80)
-				*/
+				JOptionPane.showMessageDialog(null, "Take the lowest block and place it in the first cart created that has no blocks");
+
 			}
 		}      
 		JMenuItem item = new JMenuItem(name);      
@@ -245,14 +242,11 @@ public class GraphicLinkedViewer extends JFrame
 		{
 			public void actionPerformed(ActionEvent event)
 			{
+				// Description of what it should do :(
 				facename = name;
 				System.out.println("queue add");
-				JOptionPane.showMessageDialog(null, "My Goodness, this is so concise");
-				/*
-				 * Complete with function for queue add
-				 * 
-				 * panel.moveXDir(80); (moves x by 80)
-				*/
+				JOptionPane.showMessageDialog(null, "Take the block on top of the selected cart and place it on top of the stack");
+
 			}
 		}      
 		JMenuItem item = new JMenuItem(name);      
