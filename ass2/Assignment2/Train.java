@@ -105,10 +105,5 @@ abstract class Train
 	 * @param x
 	 * @param y
 	 */
-	public void moveRandXY(int x, int y)
-	{
-		this.y = (int) Math.random();
-		this.x = (int) Math.random();
-	}
 
 }//End Train class
