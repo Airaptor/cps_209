@@ -20,6 +20,7 @@ public class GraphicLinkedPanel extends JPanel implements MouseMotionListener
 	public static ArrayList<Train> objects;
 	private Train selectedObject;
 
+
 	/**
 	 * The constructor for the Panel class
 	 */
@@ -97,6 +98,7 @@ public class GraphicLinkedPanel extends JPanel implements MouseMotionListener
 		} 
 		else if(objects.size() < 6)
 		{
+			Train.count++;
 			objects.add(new Cart(event.getX(), event.getY(), null));
 		}
 		else if(objects.size() < 7)
