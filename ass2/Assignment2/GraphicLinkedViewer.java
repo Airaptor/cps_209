@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 
 
@@ -246,6 +247,7 @@ public class GraphicLinkedViewer extends JFrame
 			{
 				facename = name;
 				System.out.println("queue add");
+				JOptionPane.showMessageDialog(null, "My Goodness, this is so concise");
 				/*
 				 * Complete with function for queue add
 				 * 
